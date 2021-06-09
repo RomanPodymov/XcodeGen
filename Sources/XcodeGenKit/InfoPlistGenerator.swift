@@ -47,3 +47,19 @@ public class InfoPlistGenerator {
         return targetInfoPlist
     }
 }
+
+public extension Dictionary where Key == String, Value == Any {
+    func withAllRequiredProperties() -> [String:Any] {
+        var result = self
+        /*if result["UIRequiresFullScreen"] as? Bool != true {
+            && (result["UISupportedInterfaceOrientations"] as? [String])?.isEmpty != false {
+               result["UISupportedInterfaceOrientations"] = [
+                   "UIInterfaceOrientationPortrait",
+                   "UIInterfaceOrientationPortraitUpsideDown",
+                   "UIInterfaceOrientationLandscapeLeft",
+                   "UIInterfaceOrientationLandscapeRight"
+               ]
+        }*/
+        return result
+    }
+}
